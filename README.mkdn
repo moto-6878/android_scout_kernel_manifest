@@ -6,7 +6,7 @@ Getting started
 
 To initialize your local repository, use a command like this:
 ```
-repo init -u https://github.com/moto-6878/android_kernel_manifest_scout.git -b main --git-lfs
+repo init -u https://github.com/moto-6878/android_scout_kernel_manifest -b main --git-lfs
 ```
 Then to sync up:
 ```
