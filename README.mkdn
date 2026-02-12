@@ -1,0 +1,26 @@
+Motorola Kernel Build
+=====================
+
+Getting started
+---------------
+
+To initialize your local repository, use a command like this:
+```
+repo init -u https://github.com/moto-6878/android_kernel_manifest_scout.git -b main --git-lfs
+```
+Then to sync up:
+```
+repo sync
+```
+
+To build kernel and modules
+---------------------------
+
+Clean build directories
+```
+rm -rf MODULE.bazel WORKSPACE WORKSPACE.bzlmod out/
+```
+Start build
+```
+./build.sh
+```

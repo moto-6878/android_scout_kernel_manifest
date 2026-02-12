@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aosp" fetch="https://android-review.googlesource.com/"/>
+  <default revision="main-kernel-build-2023" remote="aosp" sync-j="4"/>
+  <remote name="moto_6878" fetch="https://github.com/moto-6878/"/>
+
+  <superproject name="kernel/superproject" remote="aosp" revision="common-android14-6.1"/>
+
+  <project path="build/kernel" name="kernel/build" clone-depth="1"/>
+  <project path="common" name="kernel/common" revision="android14-6.1" clone-depth="1"/>
+  <project path="kernel/configs" name="kernel/configs" revision="main" clone-depth="1"/>
+  <project path="kernel/tests" name="kernel/tests" revision="main" clone-depth="1"/>
+  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android14-6.1" clone-depth="1"/>
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"/>
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1"/>
+  <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" clone-depth="1"/>
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1"/>
+  <project path="prebuilts/tradefed" name="platform/tools/tradefederation/prebuilts" revision="main" clone-depth="1"/>
+  <project path="prebuilts/asuite" name="platform/prebuilts/asuite" revision="main" clone-depth="1"/>
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1"/>
+
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1"/>
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1"/>
+  <project path="prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" clone-depth="1"/>
+
+  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" clone-depth="1"/>
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" clone-depth="1"/>
+  <project path="external/stardoc" name="platform/external/stardoc" clone-depth="1" />
+  <project path="external/python/absl-py" name="platform/external/python/absl-py" clone-depth="1" />
+
+  <!-- scout kernel sources -->
+  <project path="kernel-6.1" name="android_kernel_motorola_scout" revision="lineage-23.0" remote="moto_6878" clone-depth="1"/>
+  
+  <project path="kernel_device_modules-6.1" name="android_kernel_motorola_scout-modules" revision="lineage-23.0" remote="moto_6878" clone-depth="1"/>
+
+  <!-- MediaTek kernel modules -->
+  <project path="vendor/mediatek/kernel_modules" name="android_vendor_mediatek_kernel_modules" revision="lineage-23.0" remote="moto_6878" clone-depth="1" groups="vendor"/>
+
+  <!-- Motorola kernel modules -->
+  <project path="motorola/kernel/modules" name="android_motorola_kernel_modules" revision="lineage-23.0" remote="moto_6878" clone-depth="1"/>
+  
+  <project path="build/bazel_mgk_rules" name="android-build-bazel_mgk_rules" revision="lineage-23.0" remote="moto_6878" clone-depth="1"/>
+
+  <!-- Manifest Repo & Build Script -->
+  <project path="build/manifest" name="android_scout_kernel_manifest" remote="moto_6878" revision="lineage-23.0">
+    <linkfile src="build.sh" dest="build.sh"/>
+  </project>
+</manifest>
